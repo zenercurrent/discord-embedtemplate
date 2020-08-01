@@ -8,10 +8,12 @@ import datetime
 import json
 
 
-def embedtemplate(title, descript, url="", name=None, icon=None, thumb=None):
+def embedtemplate(title, descript, url="", name=None, icon=None, thumb=None, footer=None):
     embed = Embed(title=title, description=descript, url=url)
     if (name and icon and thumb) is not None:
         embed = metadata(embed, name, icon, thumb)
+    if footer is not None:
+        embed = setfooter(embed, footer)
     return embed
 
 
@@ -21,6 +23,7 @@ def metadata(embed, name, icon, thumb):
     return embed
 
 
+# For testing purposes where the input is taken from Python Console
 def fieldgen(embed, fieldno, finline_check=False):
     fname, fvalue = list(), list()
     if finline_check:
