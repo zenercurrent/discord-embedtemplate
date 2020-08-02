@@ -37,7 +37,7 @@ To remove instances of dict, manually edit the text file and remove the whole li
 """
 path = "database.txt"
 store = DBET.EDictFile(file=path, embed=embed)
-store.add(prefix="{\"test\": ", suffix="}")
+store.add(prefix="{\"test2\": ", suffix="}")
 
 embeddict = dict()
 datadump = store.get()

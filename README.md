@@ -26,10 +26,22 @@ embed = DBET.embedtemplate(
     footer="footer"
 )
 ```
-<img src=https://cdn.discordapp.com/attachments/720986344020508892/739479274922442792/unknown.png width="300">
+<img src=https://cdn.discordapp.com/attachments/720986344020508892/739479274922442792/unknown.png width="300" alt="Example Embed">
 
 More in-depth examples are provided and can be found in the examples folder. 
 
 <hr>
 
 ### Usage
+Saving an Embed object as a dict into a text file for easy accessibility.
+Added bonus if saved as a json format for more organised extraction.
+```python
+store = DBET.EDictFile(file=path, embed=embed)
+store.add(prefix="{\"test2\": ", suffix="}")
+``` 
+
+<img src=https://cdn.discordapp.com/attachments/720986344020508892/739482307001319434/unknown.png width="300" alt="database.txt">
+
+Examples also show how to add and get these values.
+
+<hr>
