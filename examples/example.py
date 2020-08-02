@@ -15,8 +15,8 @@ embed = DBET.embedtemplate(
     descript="descript",
     url="https://github.com/zenercurrent/discord-embedtemplate",
     name="Name",
-    icon="discord.png",
-    thumb="discord.png",
+    icon="https://www.freepnglogos.com/uploads/discord-logo-png/concours-discord-cartes-voeux-fortnite-france-6.png",
+    thumb="https://www.freepnglogos.com/uploads/discord-logo-png/concours-discord-cartes-voeux-fortnite-france-6.png",
     footer="footer"
 )
 
