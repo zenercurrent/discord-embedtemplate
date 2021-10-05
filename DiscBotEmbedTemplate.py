@@ -10,8 +10,7 @@ import json
 
 def embedtemplate(title, descript, url="", name=None, icon=None, thumb=None, footer=None):
     embed = Embed(title=title, description=descript, url=url)
-    if (name and icon and thumb) is not None:
-        embed = metadata(embed, name, icon, thumb)
+    embed = metadata(embed, name, icon, thumb)
     if footer is not None:
         embed = setfooter(embed, footer)
     return embed
@@ -19,7 +18,8 @@ def embedtemplate(title, descript, url="", name=None, icon=None, thumb=None, foo
 
 def metadata(embed, name, icon, thumb):
     embed.set_author(name=name, icon_url=icon)
-    embed.set_thumbnail(url=thumb)
+    if thumb is not None:
+        embed.set_thumbnail(url=thumb)
     return embed
 
 
@@ -49,9 +49,10 @@ def newfield(embed, fieldno, fname, fvalue, finline=False):
     return embed
 
 
-def setfooter(embed, text):
+def setfooter(embed, text, timestamp_flag=False):
     embed.set_footer(text=text)
-    embed.timestamp = datetime.datetime.utcnow()
+    if timestamp_flag:
+        embed.timestamp = datetime.datetime.utcnow()
     return embed
 
 
